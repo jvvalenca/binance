@@ -1,12 +1,12 @@
 from binance.client import Client
 import locale
+import os
 
 locale.setlocale(locale.LC_ALL, 'pt_BR.UTF-8')
 
 # Substitua pelas suas chaves
-api_key = 'wglVoRL7zkmeiFhlJLFK5g8yqvWHCDovmZkD9asnCl4lC2ZnCvDCuKkAAb4IxYdo'
-api_secret = 'XhO45prcXMfsWJVf6c9nUfE5JqMo7MmZkkNaoTnv3qNGZU38YMwlxBSfPulszChU'
-
+api_key = os.getenv('BINANCE_API_KEY')
+api_secret = os.getenv('BINANCE_API_SECRET')
 
 # Inicializa o cliente da Binance
 client = Client(api_key, api_secret)
